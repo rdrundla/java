@@ -1,4 +1,4 @@
-package long_num_multiplication_karatsuba_agorithm;
+package big_number_oprations;
 
 import java.io.FileInputStream;
 import java.util.Scanner;
@@ -11,16 +11,18 @@ public class Solution {
 	private static int SMALLER = 2;
 
 	public static void main(String[] args) throws Exception {
-		FileInputStream fileInputStream = 
-				new FileInputStream("src/long_num_multiplication_karatsuba_agorithm/input.txt");
-		Scanner sc = new Scanner(fileInputStream);
+		System.setIn(new FileInputStream("src/big_number_oprations/input.txt"));
+		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		for (int test_case = 1; test_case <= T; test_case++) {
 			String num1 = sc.next();
 			String num2 = sc.next();
+			String s = "";
 			//String multiplication = multiply(num1, num2);
-			String s = divide(Integer.parseInt(num1), Integer.parseInt(num2), 0, 11);
-			System.out.println(s);
+			s = divide(Integer.parseInt(num1), Integer.parseInt(num2), 0, 11);
+			System.out.println("Result after divide is : " + s);
+			s = addBigNumbers(num1, num2);
+			System.out.println("Added Number is : " + s);
 		}
 		
 		System.out.println();
@@ -84,13 +86,13 @@ public class Solution {
 		
 		String P1 = multiply(xl, yl);
 		String p2 = multiply(xr, yr);
-		String P3 = multiply(addString(xl,xr), addString(yl, yr));
+		String P3 = multiply(addBigNumbers(xl,xr), addBigNumbers(yl, yr));
 		
 		
 		return null;
 	}
 
-	private static String addString(String a, String b) {
+	private static String addBigNumbers(String a, String b) {
 		int l1 = a.length();
 		int l2 = b.length();
 		String digit = "";
