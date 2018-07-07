@@ -1,4 +1,4 @@
-package dfs;
+package dfs_traversal;
 
 import java.io.FileInputStream;
 import java.util.Scanner;
@@ -84,7 +84,7 @@ public class DFS {
 	
 	public static void main(String[] args) throws Exception {
 		
-		System.setIn(new FileInputStream("src/dfs/input.txt"));
+		System.setIn(new FileInputStream("src/dfs_traversal/input.txt"));
 		Scanner sc = new Scanner(System.in);
 		
 		int v = sc.nextInt();
