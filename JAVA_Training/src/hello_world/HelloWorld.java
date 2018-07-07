@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class HelloWorld {
 	public static void main(String[] args) throws Exception {
 		
-		FileInputStream fileInputStream = new FileInputStream("src/hello_world/input.txt");
-		Scanner sc = new Scanner(fileInputStream);
+		System.setIn(new FileInputStream("src/hello_world/input.txt"));
+		Scanner sc = new Scanner(System.in);
 		
 		String str = sc.nextLine();
 		System.out.println(str);
